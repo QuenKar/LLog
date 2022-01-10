@@ -1,0 +1,2 @@
+# LLog
+C++ Fast LogLib
