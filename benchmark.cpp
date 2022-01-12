@@ -41,8 +41,7 @@ void run_benchmark(Function &&f, int thread_count)
 
 int main()
 {
-
-    llog::initialize(llog::NonGuaranteedLogger(10), "/home/quenkar/code/Log/LLog", "llog", 1);
+    llog::initialize(llog::NonGuaranteedLogger(10), "/home/quenkar/code/Log/LLog/", "llog", 1);
     for (auto threads : {1, 2, 3, 4, 5})
         run_benchmark(llog_benchmark, threads);
 

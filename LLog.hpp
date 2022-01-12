@@ -111,6 +111,10 @@ namespace llog
 
 } //namespace llog
 
+/*
+__FILE__：在源文件中插入当前源文件名；
+__LINE__：在源代码中插入当前源代码行号；
+*/
 #define LLOG(LEVEL) llog::LLog() == llog::LLogLine(LEVEL, __FILE__, __func__, __LINE__)
 
 #define LOG_INFO llog::is_logged(llog::LogLevel::INFO) && LLOG(llog::LogLevel::INFO)
