@@ -78,7 +78,7 @@ namespace llog
         void encode(string_literal_t arg);
         void encode_c_string(char const *arg, size_t length);
         void resize_buffer_if_needed(size_t additional_bytes);
-        void stringify(std::ostream &os, char const *state, char const *const end);
+        void stringify(std::ostream &os, char *state, char const *const end);
 
     private:
         size_t m_bytes_used;
@@ -111,7 +111,7 @@ namespace llog
 
 } //namespace llog
 
-#define LLOG(LEVEL) llog::LLog()==llog::LLogLine(LEVEL,__FILE__,__func__,__LINE__)
+#define LLOG(LEVEL) llog::LLog() == llog::LLogLine(LEVEL, __FILE__, __func__, __LINE__)
 
 #define LOG_INFO llog::is_logged(llog::LogLevel::INFO) && LLOG(llog::LogLevel::INFO)
 #define LOG_WARN llog::is_logged(llog::LogLevel::WARN) && LLOG(llog::LogLevel::WARN)

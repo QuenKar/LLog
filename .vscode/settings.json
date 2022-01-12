@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "new": "cpp",
+        "atomic": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
+}
